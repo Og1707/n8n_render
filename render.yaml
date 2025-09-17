@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: n8n
+    env: docker
+    plan: starter          # o el plan que uses
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: N8N_HOST
+        value: "onrender.com"
+      - key: N8N_PROTOCOL
+        value: "https"
+      - key: GENERIC_TIMEZONE
+        value: "America/Bogota"
+      # Si quieres que n8n SIRVA HTTPS directamente:
+      # - key: N8N_SSL_CERT
+      #   value: "/opt/custom-certificates/mycert.pem"
+      # - key: N8N_SSL_KEY
+      #   value: "/opt/custom-certificates/mycert.key"
